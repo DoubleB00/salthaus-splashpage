@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.salthaus-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/image1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  z-index: 0;
+}
+
+.background-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  z-index: 2;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+.logo-section {
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+.brand-info {
+  margin-top: 3rem;
+  flex-shrink: 0;
+}
+
+.brand-line {
+  font-size: 0.813rem;
+  letter-spacing: 0.15em;
+  color: #e8e8e8;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.store-link-wrapper {
+  margin-top: 3rem;
+  flex-shrink: 0;
+}
+
+.store-link {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 0.813rem;
+  letter-spacing: 0.2em;
+  transition: all 0.3s ease;
+}
+
+.store-link:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.left-column > :last-child {
+  margin-top: auto;
+}
+
+.email-capture {
+  margin-top: auto;
+  padding-top: 2rem;
+  flex-shrink: 0;
+}
+
+.email-capture form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.email-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1rem;
+  color: #e8e8e8;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.15em;
+}
+
+.email-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.email-submit {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  color: #e8e8e8;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.email-submit:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  flex-shrink: 0;
+}
+
+.email-address {
+  font-size: 0.813rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.brand-credit {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.right-column {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 3rem 3rem 3rem 2rem;
+}
+
+.right-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-column::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.right-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.right-column::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.offerings-wrapper {
+  max-width: 600px;
+}
+
+.offerings-header {
+  font-size: 1.125rem;
+  letter-spacing: 0.3em;
+  color: #e8e8e8;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+.offerings-list {
+  margin-bottom: 3rem;
+}
+
+.offering-item {
+  margin-bottom: 2rem;
+}
+
+.offering-hymn {
+  font-size: 1.063rem;
+  letter-spacing: 0.12em;
+  color: #e8e8e8;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.offering-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.938rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.disclaimer {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.disclaimer p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.closing-statement {
+  text-align: center;
+  padding: 2rem 0 4rem;
+}
+
+.closing-statement p {
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+  color: #e8e8e8;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-column {
+    padding: 3rem 2rem;
+    min-height: auto;
+  }
+
+  .logo {
+    max-width: 300px;
+  }
+
+  .right-column {
+    padding: 3rem 2rem;
+    overflow-y: visible;
+  }
+
+  .offerings-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .left-column {
+    padding: 2rem 1.5rem;
+  }
+
+  .right-column {
+    padding: 2rem 1.5rem;
+  }
+
+  .logo {
+    max-width: 260px;
+  }
+
+  .brand-line {
+    font-size: 0.75rem;
+  }
+
+  .offerings-header {
+    font-size: 1rem;
+  }
+
+  .offering-hymn {
+    font-size: 0.938rem;
+  }
+
+  .offering-description {
+    font-size: 0.875rem;
+  }
+
+  .closing-statement p {
+    font-size: 1.125rem;
+    letter-spacing: 0.2em;
+  }
+
+  .email-capture form {
+    flex-direction: column;
+  }
+}

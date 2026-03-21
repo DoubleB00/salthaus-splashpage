@@ -313,8 +313,12 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .background-image {
+    background-position: 60% center;
+  }
+
   .background-image::after {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6));
   }
 
   .content-wrapper {
@@ -325,24 +329,84 @@ body {
   }
 
   .left-column {
-    padding: 4rem 3rem;
+    padding: 3rem 2rem 2.5rem;
     min-height: auto;
   }
 
+  .logo-section {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
   .logo {
-    max-width: 300px;
+    max-width: 220px;
+    margin: 0 auto;
   }
 
   .brand-info {
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .brand-line {
+    font-size: 0.688rem;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.2em;
   }
 
   .store-link-wrapper {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .store-link {
+    padding: 0.7rem 2rem;
+    font-size: 0.688rem;
+    letter-spacing: 0.24em;
+  }
+
+  .email-capture {
+    margin-top: 2.5rem;
+    padding-top: 0;
+  }
+
+  .email-capture form {
+    flex-direction: column;
+    gap: 0.625rem;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .email-input {
+    text-align: center;
+    font-size: 0.656rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .email-submit {
+    padding: 0.625rem 1rem;
+    font-size: 0.656rem;
+    letter-spacing: 0.24em;
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .email-address {
+    font-size: 0.688rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .brand-credit {
+    font-size: 0.656rem;
+    letter-spacing: 0.18em;
   }
 
   .right-column {
-    padding: 3rem 3rem 4rem;
+    padding: 2.5rem 2rem 4rem;
     overflow-y: visible;
   }
 
@@ -351,76 +415,44 @@ body {
   }
 
   .offerings-header {
-    margin-bottom: 3rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.38em;
+    margin-bottom: 2.5rem;
+    text-align: center;
   }
 
   .offering-item {
-    margin-bottom: 3rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .left-column {
-    padding: 3rem 2rem;
-  }
-
-  .right-column {
-    padding: 2.5rem 2rem 4rem;
-  }
-
-  .logo {
-    max-width: 260px;
-  }
-
-  .brand-line {
-    font-size: 0.7rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .brand-info {
-    margin-top: 3rem;
-  }
-
-  .store-link-wrapper {
-    margin-top: 2.5rem;
-  }
-
-  .offerings-header {
-    font-size: 0.813rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
   }
 
   .offering-hymn {
-    font-size: 1rem;
+    font-size: 0.938rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.625rem;
   }
 
   .offering-description {
     font-size: 0.813rem;
-  }
-
-  .offering-item {
-    margin-bottom: 2.5rem;
+    line-height: 1.65;
   }
 
   .disclaimer {
     margin: 4rem 0;
+    text-align: center;
+  }
+
+  .disclaimer p {
+    font-size: 0.75rem;
+    line-height: 1.9;
   }
 
   .closing-statement {
     padding: 2.5rem 0 4rem;
+    text-align: center;
   }
 
   .closing-statement p {
-    font-size: 1.125rem;
-    letter-spacing: 0.24em;
-  }
-
-  .email-capture form {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .email-submit {
-    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.26em;
   }
 }

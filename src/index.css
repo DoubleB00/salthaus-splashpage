@@ -45,7 +45,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.28));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.15));
   z-index: 1;
 }
 
@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 2rem 3.5rem 4rem 2rem;
+  padding: 1.5rem 3.5rem 4rem 1.5rem;
   overflow: hidden;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .brand-info {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   flex-shrink: 0;
 }
 
@@ -90,34 +90,35 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .store-link-wrapper {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   flex-shrink: 0;
 }
 
 .store-link {
   display: inline-block;
-  padding: 1rem 3rem;
-  background: rgba(255, 255, 255, 0.95);
-  color: rgba(0, 0, 0, 0.9);
+  padding: 1.15rem 3.5rem;
+  background: rgba(255, 255, 255, 0.97);
+  color: rgba(0, 0, 0, 0.95);
   text-decoration: none;
-  font-size: 0.875rem;
-  letter-spacing: 0.22em;
+  font-size: 0.938rem;
+  letter-spacing: 0.24em;
   transition: all 0.3s ease;
   font-weight: 600;
   border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .store-link:hover {
   background: rgba(255, 255, 255, 1);
   color: rgba(0, 0, 0, 1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .left-column > :last-child {
@@ -133,7 +134,7 @@ body {
 .email-capture form {
   display: flex;
   gap: 0.5rem;
-  max-width: 420px;
+  max-width: 320px;
 }
 
 .email-input {
@@ -186,28 +187,28 @@ body {
 }
 
 .index-title {
-  font-size: 0.813rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.2em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   font-weight: 500;
 }
 
 .email-label {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.813rem;
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.15em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   font-weight: 400;
 }
 
 .email-address {
-  font-size: 0.813rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
   font-family: 'Cinzel', serif;
   font-weight: 400;
   letter-spacing: 0.08em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
   line-height: 1.6;
   text-decoration: none;
   display: inline-block;
@@ -215,12 +216,13 @@ body {
 }
 
 .email-address:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
 }
 
 .brand-credit {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.813rem;
+  color: rgba(255, 255, 255, 0.65);
   letter-spacing: 0.12em;
   font-weight: 400;
   margin-top: 0.4rem;

@@ -88,8 +88,10 @@ function App() {
             </div>
 
             <div className="contact-info">
-              <p className="email-address">salt@cultofsalthaus.com</p>
-              <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
+              <p className="index-title">THE SALT INDEX</p>
+              <p className="email-label">EMAIL / DEVOTE.</p>
+              <a href="mailto:salt@cultofsalthaus.com" className="email-address">SALT@CULTOFSALTHAUS.COM</a>
+              <p className="brand-credit">THE SALTHAUS BY GEMINI CROW.</p>
             </div>
           </div>
         </aside>
@@ -99,12 +101,18 @@ function App() {
             <h1 className="offerings-header">OFFERINGS</h1>
 
             <div className="offerings-list">
-              {offerings.map((offering, index) => (
-                <div key={index} className="offering-item">
-                  <h2 className="offering-hymn">{offering.hymn}</h2>
-                  <p className="offering-description">{offering.description}</p>
-                </div>
-              ))}
+              {offerings.map((offering, index) => {
+                const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
+                const hymnName = nameParts.join(' ');
+                return (
+                  <div key={index} className="offering-item">
+                    <h2 className="offering-hymn">
+                      <span className="hymn-number">{hymnNumber}</span> {hymnName}
+                    </h2>
+                    <p className="offering-description">{offering.description.toUpperCase()}</p>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="disclaimer">

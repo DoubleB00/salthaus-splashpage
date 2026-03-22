@@ -231,7 +231,7 @@ body {
 .right-column {
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 4.5rem 2rem 5rem 6rem;
+  padding: 4.5rem 2rem 5rem 7.5rem;
   display: flex;
   justify-content: flex-end;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const offerings = [
   {
@@ -36,13 +36,6 @@ const offerings = [
 ];
 
 function App() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Email submitted:', email);
-  };
-
   return (
     <div className="salthaus-container">
       <div className="background-image" />
@@ -71,27 +64,11 @@ function App() {
               </a>
             </div>
 
-            <div className="email-capture">
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="EMAIL"
-                  className="email-input"
-                  required
-                />
-                <button type="submit" className="email-submit">
-                  DEVOTE
-                </button>
-              </form>
-            </div>
-
             <div className="contact-info">
-              <p className="index-title">THE SALT INDEX</p>
-              <p className="email-label">EMAIL / DEVOTE.</p>
-              <a href="mailto:salt@cultofsalthaus.com" className="email-address">SALT@CULTOFSALTHAUS.COM</a>
-              <p className="brand-credit">THE SALTHAUS BY GEMINI CROW.</p>
+              <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT.</a>
+              <a href="#" className="contact-link">TRANSMISSIONS</a>
+              <a href="#" className="contact-link">SALTGAZE</a>
+              <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
             </div>
           </div>
         </aside>

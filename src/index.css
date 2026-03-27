@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @font-face {
   font-family: 'Phantasmagoria';
-  src: url('https://www.onlinewebfonts.com/download/bc88d64a82ff37b77bd9e1dd89ec655d') format('woff');
+  src: url('/fonts/msasZcbmLejPsxYt8EZQOQlist2F5BNHhpagVrkBlBeGn4nXIRNDnpZn5JgG7Q81_(2).otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,10 +19,14 @@
 }
 
 body {
-  font-family: 'Cinzel', serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Phantasmagoria', serif;
 }
 
 .salthaus-container {
@@ -152,7 +156,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.6rem 0.5rem;
   color: rgba(255, 255, 255, 0.85);
-  font-family: 'Cinzel', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   outline: none;
@@ -175,7 +179,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.6rem 1rem;
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Cinzel', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   cursor: pointer;
@@ -213,7 +217,7 @@ body {
 .email-address {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.85);
-  font-family: 'Cinzel', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   letter-spacing: 0.08em;
   margin-bottom: 0.9rem;
@@ -307,7 +311,7 @@ body {
 }
 
 .offering-hymn {
-  font-family: 'Phantasmagoria', 'Cinzel', serif;
+  font-family: 'Phantasmagoria', serif;
   font-size: 1.5rem;
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.92);
@@ -322,7 +326,7 @@ body {
 }
 
 .offering-description {
-  font-family: 'Cinzel', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.15em;
@@ -352,7 +356,7 @@ body {
 }
 
 .closing-statement p {
-  font-family: 'Phantasmagoria', 'Cinzel', serif;
+  font-family: 'Phantasmagoria', serif;
   font-size: 1.75rem;
   letter-spacing: 0.28em;
   color: rgba(255, 255, 255, 0.96);

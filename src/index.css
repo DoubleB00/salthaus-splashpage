@@ -149,7 +149,7 @@ h1, h2, h3 {
 .contact-link {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   letter-spacing: 0.1em;
   line-height: 1.8;
@@ -163,6 +163,7 @@ h1, h2, h3 {
 }
 
 .brand-credit {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 0.813rem;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.1em;
@@ -202,13 +203,14 @@ h1, h2, h3 {
 }
 
 .offerings-header {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   letter-spacing: 0.35em;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 4rem;
-  padding-bottom: 0;
-  border-bottom: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 500;
+  font-family: 'Inter', sans-serif;
 }
 
 .offerings-list {
@@ -216,7 +218,7 @@ h1, h2, h3 {
 }
 
 .offering-item {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.8rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -243,24 +245,24 @@ h1, h2, h3 {
 
 .offering-hymn {
   font-family: 'Phantasmagoria', serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .hymn-number {
-  font-size: 1.625rem;
+  font-size: 1.35rem;
   font-weight: 600;
 }
 
 .offering-description {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.15em;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.12em;
   font-weight: 400;
   line-height: 1.6;
   text-transform: uppercase;
@@ -274,11 +276,12 @@ h1, h2, h3 {
 }
 
 .disclaimer p {
-  font-size: 0.938rem;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.08em;
-  line-height: 2;
-  font-weight: 500;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  font-weight: 400;
 }
 
 .closing-statement {

@@ -40,12 +40,13 @@ function App() {
     <div className="salthaus-container">
       <div className="background-image" />
 
+      <div className="logo-section">
+        <img src="/image2.jpeg" alt="The Salthaus" className="logo" />
+      </div>
+
       <div className="content-wrapper">
         <aside className="left-column">
           <div className="left-content">
-            <div className="logo-section">
-              <img src="/image2.jpeg" alt="The Salthaus" className="logo" />
-            </div>
 
             <div className="brand-info">
               <p className="brand-line">SMALL BATCH FINISHING SALTS</p>

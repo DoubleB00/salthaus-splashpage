@@ -288,12 +288,13 @@ h1, h2, h3 {
 }
 
 .disclaimer p {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.05em;
-  line-height: 1.9;
-  font-weight: 400;
+  font-family: 'Phantasmagoria', serif;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .closing-statement {

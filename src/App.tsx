@@ -44,7 +44,7 @@ function App() {
         <aside className="left-column">
           <div className="left-content">
             <div className="logo-section">
-              <img src="/Salthaus_Logo.png" alt="The Salthaus" className="logo" />
+              <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
             </div>
 
             <div className="brand-info">

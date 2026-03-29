@@ -90,7 +90,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 4rem 2.5rem 3rem 5rem;
+  padding: 2rem 2.5rem 3rem 2rem;
   position: relative;
 }
 
@@ -104,12 +104,10 @@ h1, h2, h3 {
 .logo {
   display: block;
   width: 100%;
-  max-width: 286px;
+  max-width: 372px;
   height: auto;
   opacity: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))
-          brightness(1.05)
-          contrast(1.1);
+  filter: brightness(10) saturate(0) contrast(1.1);
 }
 
 .brand-info {

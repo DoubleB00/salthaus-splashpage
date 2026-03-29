@@ -3,35 +3,35 @@ import React from 'react';
 const offerings = [
   {
     hymn: 'HYMN001 STILL',
-    description: 'Icelandic White Flake'
+    description: 'Icelandic White Flake Salt'
   },
   {
     hymn: 'HYMN002 KVLT LEADR',
-    description: 'Juniper Berry, Smoked Hickory'
+    description: 'Smoked Hickory Sea Salt, Juniper Berry'
   },
   {
     hymn: 'HYMN003 BRINE HOUSE',
-    description: 'Dill Pickle'
+    description: 'Refined White Salt, Brine, Dill'
   },
   {
     hymn: 'HYMN004 SALTS IN THE THRONE ROOM',
-    description: 'Bay Leaf Infused'
+    description: 'Grey Sea Salt, Bay Leaf'
   },
   {
     hymn: 'HYMN005 ANGELS DESERVE TO DIE!',
-    description: 'Scorpion Pepper, Black Lava'
+    description: 'Hawaiian Black Lava Salt, Scorpion Pepper'
   },
   {
     hymn: 'HYMN006 SUKEBAN SWITCHBLADE',
-    description: 'Yuzu, Black Sesame'
+    description: 'Refined White Salt, Yuzu, Black Sesame'
   },
   {
     hymn: 'HYMN007 MURDER BALLAD',
-    description: 'Hibiscus, Black Garlic'
+    description: 'White Sea Salt, Hibiscus, Black Garlic'
   },
   {
     hymn: 'HYMN008 ANHEDONIA',
-    description: 'Black Currant, Activated Charcoal'
+    description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
   }
 ];
 

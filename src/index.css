@@ -226,7 +226,7 @@ h1, h2, h3 {
 }
 
 .offerings-wrapper {
-  max-width: 520px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -273,7 +273,7 @@ h1, h2, h3 {
 
 .offering-hymn {
   font-family: 'Phantasmagoria', serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 0.4rem;
@@ -285,7 +285,7 @@ h1, h2, h3 {
 
 .hymn-number {
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   margin-right: 0.35em;

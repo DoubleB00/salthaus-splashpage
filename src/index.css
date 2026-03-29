@@ -94,6 +94,19 @@ h1, h2, h3 {
 .logo-section {
   flex-shrink: 0;
   margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.logo-section::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .logo {
@@ -102,6 +115,12 @@ h1, h2, h3 {
   max-width: 286px;
   height: auto;
   opacity: 1;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6))
+          drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8))
+          brightness(1.05)
+          contrast(1.1);
 }
 
 .brand-info {

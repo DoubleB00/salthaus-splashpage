@@ -40,13 +40,12 @@ function App() {
     <div className="salthaus-container">
       <div className="background-image" />
 
-      <div className="logo-section">
-        <img src="/image2.jpeg" alt="The Salthaus" className="logo" />
-      </div>
-
       <div className="content-wrapper">
         <aside className="left-column">
           <div className="left-content">
+            <div className="logo-section">
+              <img src="/Salthaus_Logo.png" alt="The Salthaus" className="logo" />
+            </div>
 
             <div className="brand-info">
               <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
@@ -54,7 +53,7 @@ function App() {
               <p className="brand-line">SUNRISE MOUNTAIN, NJ</p>
             </div>
 
-            <div className="store-link-wrapper">
+            <div className="contact-info">
               <a
                 href="https://geminicrow.com/collections/the-salt-initiative"
                 target="_blank"
@@ -63,11 +62,8 @@ function App() {
               >
                 STORE
               </a>
-            </div>
-
-            <div className="contact-info">
-              <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT.</a>
-              <a href="#" className="contact-link">TRANSMISSIONS</a>
+              <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
+              <a href="#" className="contact-link">INTERACT</a>
               <a href="#" className="contact-link">SALTGAZE</a>
               <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
             </div>

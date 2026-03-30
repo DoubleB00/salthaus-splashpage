@@ -120,7 +120,7 @@ h1, h2, h3 {
 .logo {
   display: block;
   width: 100%;
-  max-width: 372px;
+  max-width: 335px;
   height: auto;
   opacity: 1;
   filter: brightness(10) saturate(0) contrast(1.1);
@@ -246,7 +246,7 @@ h1, h2, h3 {
 }
 
 .offering-item {
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.4rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -276,7 +276,7 @@ h1, h2, h3 {
   font-size: 1.3rem;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
   font-weight: 500;
   line-height: 1.4;
   white-space: nowrap;

@@ -30,7 +30,7 @@ const offerings = [
     description: 'White Sea Salt, Hibiscus, Black Garlic'
   },
   {
-    hymn: 'HYMN008 ANHEDONIA',
+    hymn: 'HYMN008 ANHEDÖNIA',
     description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
   }
 ];

@@ -120,7 +120,7 @@ h1, h2, h3 {
 .logo {
   display: block;
   width: 100%;
-  max-width: 335px;
+  max-width: 302px;
   height: auto;
   opacity: 1;
   filter: brightness(10) saturate(0) contrast(1.1);
@@ -203,7 +203,7 @@ h1, h2, h3 {
 .right-column {
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 4.5rem 3rem 5rem 6rem;
+  padding: 4.5rem 3rem 5rem 7.5rem;
   display: flex;
   justify-content: flex-end;
 }

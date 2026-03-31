@@ -50,7 +50,7 @@ function App() {
             <div className="brand-info">
               <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
               <p className="brand-line">CRAFTED BY HAND</p>
-              <p className="brand-line">SUNRISE MOUNTAIN, NJ</p>
+              <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
             </div>
 
             <div className="contact-info">
@@ -63,7 +63,7 @@ function App() {
                 STORE
               </a>
               <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
-              <a href="#" className="contact-link">INTERACT</a>
+              <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
               <a href="#" className="contact-link">SALTGAZE</a>
               <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
             </div>

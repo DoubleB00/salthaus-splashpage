@@ -36,6 +36,16 @@ const offerings = [
 ];
 
 function App() {
+  const [email, setEmail] = React.useState('');
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      console.log('Email submitted:', email);
+      setEmail('');
+    }
+  };
+
   return (
     <div className="salthaus-container">
       <div className="background-image" />
@@ -64,7 +74,19 @@ function App() {
               </a>
               <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
               <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
-              <a href="#" className="contact-link">SALTGAZE</a>
+              <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
+
+              <form onSubmit={handleEmailSubmit} className="email-signup">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="ENTER EMAIL"
+                  className="email-input"
+                  required
+                />
+              </form>
+
               <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
             </div>
           </div>

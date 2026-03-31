@@ -190,20 +190,49 @@ h1, h2, h3 {
   color: rgba(255, 255, 255, 1);
 }
 
+.email-signup {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.email-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
+.email-input:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
 .brand-credit {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 0.813rem;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.1em;
   font-weight: 400;
-  margin-top: 1rem;
+  margin-top: 0;
   line-height: 1.6;
 }
 
 .right-column {
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 4.5rem 3rem 5rem 7.5rem;
+  padding: 4.5rem 2rem 5rem 8rem;
   display: flex;
   justify-content: flex-end;
 }

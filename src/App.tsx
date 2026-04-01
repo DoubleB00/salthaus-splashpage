@@ -1,4 +1,10 @@
 import React from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 const offerings = [
   {
@@ -37,12 +43,32 @@ const offerings = [
 
 function App() {
   const [email, setEmail] = React.useState('');
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitMessage, setSubmitMessage] = React.useState('');
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      console.log('Email submitted:', email);
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const { error } = await supabase
+        .from('email_signups')
+        .insert([{ email, created_at: new Date().toISOString() }]);
+
+      if (error) throw error;
+
       setEmail('');
+      setSubmitMessage('Devoted.');
+      setTimeout(() => setSubmitMessage(''), 3000);
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      setSubmitMessage('Error. Try again.');
+      setTimeout(() => setSubmitMessage(''), 3000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -77,14 +103,25 @@ function App() {
               <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
 
               <form onSubmit={handleEmailSubmit} className="email-signup">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="ENTER EMAIL"
-                  className="email-input"
-                  required
-                />
+                <div className="email-input-wrapper">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="EMAIL"
+                    className="email-input"
+                    required
+                    disabled={isSubmitting}
+                  />
+                  <button
+                    type="submit"
+                    className="email-submit"
+                    disabled={isSubmitting || !email}
+                  >
+                    {isSubmitting ? '...' : 'DEVOTE'}
+                  </button>
+                </div>
+                {submitMessage && <div className="submit-message">{submitMessage}</div>}
               </form>
 
               <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>

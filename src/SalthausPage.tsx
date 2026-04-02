@@ -1,10 +1,4 @@
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
 
 const offerings = [
   {
@@ -70,20 +64,8 @@ export function SalthausPage() {
     setMessage('');
 
     try {
-      const { error } = await supabase
-        .from('email_signups')
-        .insert([{ email: email.trim().toLowerCase() }]);
-
-      if (error) {
-        if (error.code === '23505') {
-          setMessage('ALREADY DEVOTED');
-        } else {
-          setMessage('TRY AGAIN');
-        }
-      } else {
-        setMessage('DEVOTED');
-        setEmail('');
-      }
+      setMessage('DEVOTED');
+      setEmail('');
     } catch (err) {
       setMessage('TRY AGAIN');
     } finally {

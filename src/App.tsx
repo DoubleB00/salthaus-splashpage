@@ -1,129 +1,41 @@
-import React from 'react';
-
-const offerings = [
-  {
-    hymn: 'HYMN001 STILL',
-    description: 'Icelandic White Flake Salt'
-  },
-  {
-    hymn: 'HYMN002 KVLT LEADR',
-    description: 'Smoked Hickory Sea Salt, Juniper Berry'
-  },
-  {
-    hymn: 'HYMN003 BRINE HOUSE',
-    description: 'Refined White Salt, Brine, Dill'
-  },
-  {
-    hymn: 'HYMN004 SALTS IN THE THRONE ROOM',
-    description: 'Grey Sea Salt, Bay Leaf'
-  },
-  {
-    hymn: 'HYMN005 ANGELS DESERVE TO DIE!',
-    description: 'Hawaiian Black Lava Salt, Scorpion Pepper'
-  },
-  {
-    hymn: 'HYMN006 SUKEBAN SWITCHBLADE',
-    description: 'Refined White Salt, Yuzu, Black Sesame'
-  },
-  {
-    hymn: 'HYMN007 MURDER BALLAD',
-    description: 'White Sea Salt, Hibiscus, Black Garlic'
-  },
-  {
-    hymn: 'HYMN008 ANHEDÖNIA',
-    description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
-  }
-];
+import React, { useState, useEffect } from 'react';
+import { PasswordGate } from './PasswordGate';
+import { SalthausPage } from './SalthausPage';
 
 function App() {
-  React.useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cult-of-salthaus.kit.com/0e73c8f29c/index.js';
-    script.async = true;
-    script.setAttribute('data-uid', '0e73c8f29c');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-    const formContainer = document.getElementById('kit-form-container');
-    if (formContainer) {
-      formContainer.appendChild(script);
+  useEffect(() => {
+    const checkAuth = sessionStorage.getItem('salthaus_authenticated');
+    if (checkAuth === 'true') {
+      setIsAuthenticated(true);
     }
 
-    return () => {
-      if (formContainer && formContainer.contains(script)) {
-        formContainer.removeChild(script);
-      }
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
     };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  return (
-    <div className="salthaus-container">
-      <div className="background-image" />
-
-      <div className="content-wrapper">
-        <aside className="left-column">
-          <div className="left-content">
-            <div className="logo-section">
-              <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
-            </div>
-
-            <div className="brand-info">
-              <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
-              <p className="brand-line">CRAFTED BY HAND</p>
-              <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
-            </div>
-
-            <div className="contact-info">
-              <a
-                href="https://geminicrow.com/collections/the-salt-initiative"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="store-link"
-              >
-                STORE
-              </a>
-              <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
-              <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
-              <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
-
-              <div id="kit-form-container" className="kit-form-wrapper"></div>
-
-              <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
-            </div>
-          </div>
-        </aside>
-
-        <main className="right-column">
-          <div className="offerings-wrapper">
-            <h1 className="offerings-header">OFFERINGS</h1>
-
-            <div className="offerings-list">
-              {offerings.map((offering, index) => {
-                const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
-                const hymnName = nameParts.join(' ');
-                return (
-                  <div key={index} className="offering-item">
-                    <h2 className="offering-hymn">
-                      <span className="hymn-number">{hymnNumber}</span> {hymnName}
-                    </h2>
-                    <p className="offering-description">{offering.description.toUpperCase()}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="disclaimer">
-              <p>Some will return.</p>
-              <p>Some will disappear.</p>
-              <p>Nothing is promised.</p>
-            </div>
-
-            <div className="closing-statement">
-              <p>NO GODS. JUST SALT.</p>
-            </div>
-          </div>
-        </main>
+  if (currentPath !== '/launch' && currentPath !== '/') {
+    return (
+      <div className="password-gate">
+        <div className="password-gate-content">
+          <h1 className="password-gate-title">404</h1>
+          <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontFamily: "'Helvetica Neue', sans-serif", letterSpacing: '0.1em', fontSize: '0.875rem' }}>PAGE NOT FOUND</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <PasswordGate onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
+
+  return <SalthausPage />;
 }
 
 export default App;

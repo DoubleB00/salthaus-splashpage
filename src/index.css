@@ -205,6 +205,81 @@ h1, h2, h3 {
   color: rgba(255, 255, 255, 1);
 }
 
+/* Inline Email Capture */
+.inline-email-capture {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  flex-wrap: wrap;
+  max-width: 280px;
+}
+
+.inline-email-capture:focus-within {
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+
+.inline-email-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 0.25rem 0;
+  min-width: 0;
+}
+
+.inline-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.1em;
+}
+
+.inline-email-input:disabled {
+  opacity: 0.5;
+}
+
+.inline-email-submit {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.inline-email-submit:hover:not(:disabled) {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.inline-email-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.inline-email-message {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.688rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.12em;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 /* Kit Form Wrapper */
 .kit-form-wrapper {
   margin-top: 1.5rem;
@@ -485,6 +560,108 @@ h1, h2, h3 {
   line-height: 1.5;
 }
 
+/* Password Gate */
+.password-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/IMG_6986_(1).jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-gate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.password-gate-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.password-gate-title {
+  font-family: 'Phantasmagoria', serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.password-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  padding: 0.75rem 1rem;
+  width: 280px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.12em;
+}
+
+.password-input:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.password-submit {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.813rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.75rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.password-submit:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1);
+}
+
+.password-error {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 100, 100, 0.8);
+  letter-spacing: 0.15em;
+  margin-top: -0.5rem;
+}
+
 @media (max-width: 1024px) {
   body {
     overflow-x: hidden;
@@ -649,5 +826,25 @@ h1, h2, h3 {
     font-size: 1rem;
     letter-spacing: 0.26em;
     color: rgba(255, 255, 255, 0.85);
+  }
+
+  .inline-email-capture {
+    max-width: 100%;
+  }
+
+  .password-gate-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 2rem;
+  }
+
+  .password-input {
+    width: 240px;
+    font-size: 0.813rem;
+  }
+
+  .password-submit {
+    font-size: 0.75rem;
+    padding: 0.65rem 2rem;
   }
 }

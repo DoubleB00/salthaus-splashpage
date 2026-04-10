@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 const offerings = [
   {
+    hymn: 'HYMN000 LONELY COUNTRY ROAD.',
+    description: 'Refined Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
+  },
+  {
     hymn: 'HYMN001 STILL',
     description: 'Icelandic White Flake Salt'
   },
@@ -33,6 +37,12 @@ const offerings = [
     hymn: 'HYMN008 ANHEDÖNIA',
     description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
   }
+];
+
+const baseItems = [
+  { name: 'BASE001 TOCINA', sub: 'SMOKED BACON SALT' },
+  { name: 'BASE002 ROMERA', sub: 'SPANISH ROSEMARY SALT' },
+  { name: 'BASE003 CURRY', sub: 'HOT CURRY SALT' },
 ];
 
 export function SalthausPage() {
@@ -143,6 +153,20 @@ export function SalthausPage() {
                   </div>
                 );
               })}
+              <div className="base-section">
+                {baseItems.map((item, index) => {
+                  const [baseNumber, ...nameParts] = item.name.split(' ');
+                  const baseName = nameParts.join(' ');
+                  return (
+                    <div key={index} className="base-item">
+                      <h2 className="base-title">
+                        <span className="base-number">{baseNumber}</span> {baseName}
+                      </h2>
+                      <p className="base-sub">{item.sub}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="disclaimer">

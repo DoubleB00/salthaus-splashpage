@@ -475,7 +475,7 @@ h1, h2, h3 {
 }
 
 .offering-item {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -524,6 +524,44 @@ h1, h2, h3 {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.base-section {
+  margin-top: 2.5rem;
+  padding-top: 0;
+}
+
+.base-item {
+  margin-bottom: 0.35rem;
+}
+
+.base-title {
+  font-family: 'Phantasmagoria', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.base-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-right: 0.35em;
+}
+
+.base-sub {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.12em;
   font-weight: 400;
   line-height: 1.6;
@@ -729,5 +767,18 @@ h1, h2, h3 {
 
   .inline-email-capture {
     max-width: 100%;
+  }
+
+  .base-section {
+    margin-top: 2rem;
+  }
+
+  .base-title {
+    font-size: 0.938rem;
+    white-space: normal;
+  }
+
+  .base-sub {
+    font-size: 0.813rem;
   }
 }

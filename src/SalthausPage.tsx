@@ -15,11 +15,11 @@ const offerings = [
   },
   {
     hymn: 'HYMN003 BRINE HOUSE',
-    description: 'Salt, Brine, Dill'
+    description: 'Salt, Dried Garlic, Dill Weed, Brine, Vinegar Powder, Coriander'
   },
   {
     hymn: 'HYMN004 SALTS IN THE THRONE ROOM',
-    description: 'Grey Sea Salt, Bay Leaf'
+    description: 'Grey Sea Salt, Crushed Bay Leaf'
   },
   {
     hymn: 'HYMN005 ANGELS DESERVE TO DIE!',
@@ -27,7 +27,7 @@ const offerings = [
   },
   {
     hymn: 'HYMN006 SUKEBAN SWITCHBLADE',
-    description: 'Refined Salt, Yuzu, Black Sesame'
+    description: 'Yaki-Shio Sea Salt, Yuzu, Black Sesame'
   },
   {
     hymn: 'HYMN007 MURDER BALLAD',

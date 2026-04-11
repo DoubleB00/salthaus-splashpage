@@ -110,9 +110,7 @@ h1, h2, h3 {
 }
 
 .left-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   height: 100vh;
   padding: 2rem 2.5rem 0 2rem;
   overflow: hidden;
@@ -120,17 +118,17 @@ h1, h2, h3 {
 }
 
 .left-top-group {
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
 
 .left-bottom-group {
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 6px;
+  left: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-bottom: 6px;
 }
 
 .logo-section {

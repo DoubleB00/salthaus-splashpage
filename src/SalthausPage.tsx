@@ -89,52 +89,49 @@ export function SalthausPage() {
 
       <div className="content-wrapper">
         <aside className="left-column">
-          <div className="left-content">
-            <div className="logo-group">
-              <div className="logo-section">
-                <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
-              </div>
-
-              <div className="brand-info">
-                <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
-                <p className="brand-line">CRAFTED BY HAND</p>
-                <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
-              </div>
+          <div className="left-top-group">
+            <div className="logo-section">
+              <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
             </div>
-
-            <div className="contact-info">
-              <a
-                href="https://geminicrow.com/collections/the-salt-initiative"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="store-link"
-              >
-                STORE
-              </a>
-              <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
-              <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
-              <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
-
-              <form onSubmit={handleEmailSubmit} className="inline-email-capture">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="EMAIL"
-                  required
-                  disabled={isSubmitting}
-                  className="inline-email-input"
-                />
-                <button type="submit" disabled={isSubmitting} className="inline-email-submit">
-                  DEVOTE
-                </button>
-                {message && <span className="inline-email-message">{message}</span>}
-              </form>
-
-              <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
-
-              <div id="kit-form-container" className="kit-form-wrapper"></div>
+            <div className="brand-info">
+              <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
+              <p className="brand-line">CRAFTED BY HAND</p>
+              <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
             </div>
+          </div>
+
+          <div className="left-bottom-group">
+            <a
+              href="https://geminicrow.com/collections/the-salt-initiative"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="store-link"
+            >
+              STORE
+            </a>
+            <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
+            <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
+            <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
+
+            <form onSubmit={handleEmailSubmit} className="inline-email-capture">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="EMAIL"
+                required
+                disabled={isSubmitting}
+                className="inline-email-input"
+              />
+              <button type="submit" disabled={isSubmitting} className="inline-email-submit">
+                DEVOTE
+              </button>
+              {message && <span className="inline-email-message">{message}</span>}
+            </form>
+
+            <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
+
+            <div id="kit-form-container" className="kit-form-wrapper"></div>
           </div>
         </aside>
 

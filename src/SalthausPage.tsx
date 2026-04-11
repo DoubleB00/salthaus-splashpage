@@ -162,9 +162,8 @@ export function SalthausPage() {
                   return (
                     <div key={index} className="base-item">
                       <h2 className="base-title">
-                        <span className="base-number">{baseNumber}</span> {baseName}
+                        <span className="base-number">{baseNumber}</span> {baseName} <span className="base-sub">{item.sub}</span>
                       </h2>
-                      <p className="base-sub">{item.sub}</p>
                     </div>
                   );
                 })}

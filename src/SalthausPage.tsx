@@ -90,14 +90,16 @@ export function SalthausPage() {
       <div className="content-wrapper">
         <aside className="left-column">
           <div className="left-content">
-            <div className="logo-section">
-              <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
-            </div>
+            <div className="logo-group">
+              <div className="logo-section">
+                <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
+              </div>
 
-            <div className="brand-info">
-              <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
-              <p className="brand-line">CRAFTED BY HAND</p>
-              <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
+              <div className="brand-info">
+                <p className="brand-line">SMALL BATCH FINISHING SALTS</p>
+                <p className="brand-line">CRAFTED BY HAND</p>
+                <p className="brand-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
+              </div>
             </div>
 
             <div className="contact-info">

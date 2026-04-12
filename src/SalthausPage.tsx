@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const offerings = [
   {
-    hymn: 'HYMN000 LONELY COUNTRY ROAD.',
+    hymn: 'HYMN000 LONELY COUNTRY ROAD',
     description: 'Refined Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
   },
   {

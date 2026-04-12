@@ -235,7 +235,7 @@ h1, h2, h3 {
 }
 
 .inline-email-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.52);
   letter-spacing: 0.1em;
 }
 
@@ -249,7 +249,7 @@ h1, h2, h3 {
   outline: none;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.78);
   letter-spacing: 0.15em;
   font-weight: 400;
   cursor: pointer;

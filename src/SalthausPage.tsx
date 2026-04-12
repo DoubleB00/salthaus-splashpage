@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const offerings = [
   {
-    hymn: 'HYMN000 LONELY COUNTRY ROAD',
+    hymn: 'HYMN000 PALE GREEN, SEPTEMBER',
     description: 'Refined Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
   },
   {
@@ -110,7 +110,7 @@ export function SalthausPage() {
               STORE
             </a>
             <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
-            <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">INTERACT</a>
+            <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">ARCHIVE</a>
             <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
 
             <form onSubmit={handleEmailSubmit} className="inline-email-capture">

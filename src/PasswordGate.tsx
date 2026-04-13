@@ -7,6 +7,64 @@ interface PasswordGateProps {
   children: React.ReactNode;
 }
 
+function waitForKitThenClose(onDone: () => void) {
+  let kitFound = false;
+  let kitGoneTimer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
+  const FALLBACK_MS = 6000;
+  const AFTER_CLOSE_DELAY = 400;
+
+  function scheduleGate() {
+    if (kitGoneTimer) return;
+    kitGoneTimer = setTimeout(() => {
+      cleanup();
+      onDone();
+    }, AFTER_CLOSE_DELAY);
+  }
+
+  function checkKitGone() {
+    const modal = document.querySelector(
+      '.formkit-overlay, [data-uid] .formkit-slide-in, .seva-overlay, [class*="formkit-overlay"]'
+    );
+    if (!modal || getComputedStyle(modal).display === 'none' || getComputedStyle(modal).visibility === 'hidden') {
+      scheduleGate();
+    }
+  }
+
+  const observer = new MutationObserver(() => {
+    const modal = document.querySelector(
+      '.formkit-overlay, [data-uid] .formkit-slide-in, .seva-overlay, [class*="formkit-overlay"]'
+    );
+
+    if (!kitFound && modal) {
+      kitFound = true;
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
+      }
+      return;
+    }
+
+    if (kitFound) {
+      checkKitGone();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+
+  fallbackTimer = setTimeout(() => {
+    cleanup();
+    onDone();
+  }, FALLBACK_MS);
+
+  function cleanup() {
+    observer.disconnect();
+    if (fallbackTimer) clearTimeout(fallbackTimer);
+    if (kitGoneTimer) clearTimeout(kitGoneTimer);
+  }
+}
+
 export function PasswordGate({ children }: PasswordGateProps) {
   const [unlocked, setUnlocked] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -20,11 +78,11 @@ export function PasswordGate({ children }: PasswordGateProps) {
       setUnlocked(true);
       return;
     }
-    const timer = setTimeout(() => {
+
+    waitForKitThenClose(() => {
       setVisible(true);
       setTimeout(() => inputRef.current?.focus(), 100);
-    }, 800);
-    return () => clearTimeout(timer);
+    });
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {

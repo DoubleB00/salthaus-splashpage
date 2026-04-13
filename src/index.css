@@ -594,6 +594,126 @@ h1, h2, h3 {
   line-height: 1.5;
 }
 
+/* ── Password Gate ────────────────────────────────── */
+
+.pw-gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.pw-gate-overlay--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.pw-gate-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  padding: 0 2rem;
+}
+
+.pw-gate-mark {
+  font-family: 'Crimson', serif;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.18);
+  line-height: 1;
+  user-select: none;
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+}
+
+.pw-gate-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.pw-gate-form:focus-within {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.pw-gate-form--shake {
+  animation: pw-shake 0.45s ease;
+}
+
+@keyframes pw-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.pw-gate-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  padding: 0.25rem 0;
+  min-width: 0;
+}
+
+.pw-gate-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.18em;
+}
+
+.pw-gate-input--error {
+  color: rgba(220, 180, 160, 0.85);
+}
+
+.pw-gate-submit {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.688rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.pw-gate-submit:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pw-gate-error {
+  font-family: 'Crimson', serif;
+  font-size: 0.75rem;
+  color: rgba(220, 180, 160, 0.7);
+  letter-spacing: 0.22em;
+  margin-top: -0.5rem;
+}
+
+/* ── End Password Gate ────────────────────────────── */
+
 @media (max-width: 1024px) {
   body {
     overflow-x: hidden;

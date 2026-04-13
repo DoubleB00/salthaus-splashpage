@@ -1,7 +1,12 @@
 import { SalthausPage } from './SalthausPage';
+import { PasswordGate } from './PasswordGate';
 
 function App() {
-  return <SalthausPage />;
+  return (
+    <PasswordGate>
+      <SalthausPage />
+    </PasswordGate>
+  );
 }
 
 export default App;

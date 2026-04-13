@@ -2,66 +2,88 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const STORAGE_KEY = 'salthaus_unlocked';
 const CORRECT_PASSWORD = '666-salt';
+const KIT_SRC = 'https://cult-of-salthaus.kit.com/0e73c8f29c/index.js';
+const KIT_UID = '0e73c8f29c';
+const KIT_SELECTORS = '.formkit-overlay, .seva-overlay, [class*="formkit-overlay"], .formkit-slide-in';
 
 interface PasswordGateProps {
   children: React.ReactNode;
 }
 
-function waitForKitThenClose(onDone: () => void) {
-  let kitFound = false;
-  let kitGoneTimer: ReturnType<typeof setTimeout> | null = null;
-  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+function injectKit(): Promise<void> {
+  return new Promise((resolve) => {
+    if (document.querySelector(`script[data-uid="${KIT_UID}"]`)) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = KIT_SRC;
+    script.async = true;
+    script.setAttribute('data-uid', KIT_UID);
+    script.onload = () => resolve();
+    script.onerror = () => resolve();
+    document.body.appendChild(script);
+  });
+}
 
-  const FALLBACK_MS = 6000;
-  const AFTER_CLOSE_DELAY = 400;
+function isKitVisible(): boolean {
+  const el = document.querySelector(KIT_SELECTORS);
+  if (!el) return false;
+  const style = getComputedStyle(el);
+  return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+}
 
-  function scheduleGate() {
-    if (kitGoneTimer) return;
-    kitGoneTimer = setTimeout(() => {
+function waitForKitSequence(onReady: () => void) {
+  let kitSeen = false;
+  let gateTimer: ReturnType<typeof setTimeout> | null = null;
+  let hardFallback: ReturnType<typeof setTimeout> | null = null;
+
+  function showGate() {
+    if (gateTimer) return;
+    gateTimer = setTimeout(() => {
       cleanup();
-      onDone();
-    }, AFTER_CLOSE_DELAY);
+      onReady();
+    }, 350);
   }
 
-  function checkKitGone() {
-    const modal = document.querySelector(
-      '.formkit-overlay, [data-uid] .formkit-slide-in, .seva-overlay, [class*="formkit-overlay"]'
-    );
-    if (!modal || getComputedStyle(modal).display === 'none' || getComputedStyle(modal).visibility === 'hidden') {
-      scheduleGate();
+  function cancelGate() {
+    if (gateTimer) {
+      clearTimeout(gateTimer);
+      gateTimer = null;
     }
   }
 
   const observer = new MutationObserver(() => {
-    const modal = document.querySelector(
-      '.formkit-overlay, [data-uid] .formkit-slide-in, .seva-overlay, [class*="formkit-overlay"]'
-    );
-
-    if (!kitFound && modal) {
-      kitFound = true;
-      if (fallbackTimer) {
-        clearTimeout(fallbackTimer);
-        fallbackTimer = null;
+    if (isKitVisible()) {
+      if (!kitSeen) {
+        kitSeen = true;
+        if (hardFallback) {
+          clearTimeout(hardFallback);
+          hardFallback = null;
+        }
       }
-      return;
-    }
-
-    if (kitFound) {
-      checkKitGone();
+      cancelGate();
+    } else if (kitSeen) {
+      showGate();
     }
   });
 
-  observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class', 'style'],
+  });
 
-  fallbackTimer = setTimeout(() => {
+  hardFallback = setTimeout(() => {
     cleanup();
-    onDone();
-  }, FALLBACK_MS);
+    onReady();
+  }, 8000);
 
   function cleanup() {
     observer.disconnect();
-    if (fallbackTimer) clearTimeout(fallbackTimer);
-    if (kitGoneTimer) clearTimeout(kitGoneTimer);
+    if (hardFallback) clearTimeout(hardFallback);
+    if (gateTimer) clearTimeout(gateTimer);
   }
 }
 
@@ -79,10 +101,12 @@ export function PasswordGate({ children }: PasswordGateProps) {
       return;
     }
 
-    waitForKitThenClose(() => {
+    waitForKitSequence(() => {
       setVisible(true);
       setTimeout(() => inputRef.current?.focus(), 100);
     });
+
+    injectKit();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {

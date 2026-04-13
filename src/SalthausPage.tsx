@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const offerings = [
   {
@@ -49,24 +49,6 @@ export function SalthausPage() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
-
-  React.useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cult-of-salthaus.kit.com/0e73c8f29c/index.js';
-    script.async = true;
-    script.setAttribute('data-uid', '0e73c8f29c');
-
-    const formContainer = document.getElementById('kit-form-container');
-    if (formContainer) {
-      formContainer.appendChild(script);
-    }
-
-    return () => {
-      if (formContainer && formContainer.contains(script)) {
-        formContainer.removeChild(script);
-      }
-    };
-  }, []);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

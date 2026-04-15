@@ -2,89 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const STORAGE_KEY = 'salthaus_unlocked';
 const CORRECT_PASSWORD = '666-salt';
-const KIT_SRC = 'https://cult-of-salthaus.kit.com/0e73c8f29c/index.js';
-const KIT_UID = '0e73c8f29c';
-const KIT_SELECTORS = '.formkit-overlay, .seva-overlay, [class*="formkit-overlay"], .formkit-slide-in';
 
 interface PasswordGateProps {
   children: React.ReactNode;
-}
-
-function injectKit(): Promise<void> {
-  return new Promise((resolve) => {
-    if (document.querySelector(`script[data-uid="${KIT_UID}"]`)) {
-      resolve();
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = KIT_SRC;
-    script.async = true;
-    script.setAttribute('data-uid', KIT_UID);
-    script.onload = () => resolve();
-    script.onerror = () => resolve();
-    document.body.appendChild(script);
-  });
-}
-
-function isKitVisible(): boolean {
-  const el = document.querySelector(KIT_SELECTORS);
-  if (!el) return false;
-  const style = getComputedStyle(el);
-  return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
-}
-
-function waitForKitSequence(onReady: () => void) {
-  let kitSeen = false;
-  let gateTimer: ReturnType<typeof setTimeout> | null = null;
-  let hardFallback: ReturnType<typeof setTimeout> | null = null;
-
-  function showGate() {
-    if (gateTimer) return;
-    gateTimer = setTimeout(() => {
-      cleanup();
-      onReady();
-    }, 350);
-  }
-
-  function cancelGate() {
-    if (gateTimer) {
-      clearTimeout(gateTimer);
-      gateTimer = null;
-    }
-  }
-
-  const observer = new MutationObserver(() => {
-    if (isKitVisible()) {
-      if (!kitSeen) {
-        kitSeen = true;
-        if (hardFallback) {
-          clearTimeout(hardFallback);
-          hardFallback = null;
-        }
-      }
-      cancelGate();
-    } else if (kitSeen) {
-      showGate();
-    }
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['class', 'style'],
-  });
-
-  hardFallback = setTimeout(() => {
-    cleanup();
-    onReady();
-  }, 8000);
-
-  function cleanup() {
-    observer.disconnect();
-    if (hardFallback) clearTimeout(hardFallback);
-    if (gateTimer) clearTimeout(gateTimer);
-  }
 }
 
 export function PasswordGate({ children }: PasswordGateProps) {
@@ -100,13 +20,11 @@ export function PasswordGate({ children }: PasswordGateProps) {
       setUnlocked(true);
       return;
     }
-
-    waitForKitSequence(() => {
+    const t = setTimeout(() => {
       setVisible(true);
       setTimeout(() => inputRef.current?.focus(), 100);
-    });
-
-    injectKit();
+    }, 80);
+    return () => clearTimeout(t);
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {

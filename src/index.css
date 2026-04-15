@@ -714,6 +714,235 @@ h1, h2, h3 {
 
 /* ── End Password Gate ────────────────────────────── */
 
+/* ── Teaser Page ──────────────────────────────────── */
+
+.teaser-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.teaser-bg {
+  position: fixed;
+  inset: 0;
+  background-image: url('/IMG_6986_(1).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  z-index: 0;
+}
+
+.teaser-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  z-index: 1;
+}
+
+.teaser-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  max-width: 520px;
+  width: 100%;
+}
+
+.teaser-logo-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.teaser-logo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: brightness(10) saturate(0) contrast(1.1);
+  margin: 0 auto;
+}
+
+.teaser-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.teaser-meta {
+  margin-bottom: 2.5rem;
+}
+
+.teaser-meta-line {
+  font-family: 'Crimson', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.teaser-headline {
+  font-family: 'Phantasmagoria', serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.32em;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+}
+
+.teaser-sub {
+  font-family: 'Crimson', serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.teaser-email-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.teaser-email-form:focus-within {
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+}
+
+.teaser-email-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  padding: 0.3rem 0;
+  min-width: 0;
+}
+
+.teaser-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.12em;
+}
+
+.teaser-email-submit {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.teaser-email-submit:hover:not(:disabled) {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.teaser-email-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.teaser-email-message {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.688rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.14em;
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+.teaser-divider {
+  width: 1px;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 2rem 0;
+}
+
+.teaser-enter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  outline: none;
+  font-family: 'Crimson', serif;
+  font-size: 0.813rem;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.teaser-enter-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.34em;
+}
+
+.teaser-credit {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.688rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.14em;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .teaser-headline {
+    font-size: 1.5rem;
+    letter-spacing: 0.24em;
+  }
+
+  .teaser-logo {
+    max-width: 200px;
+  }
+
+  .teaser-content {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .teaser-email-form {
+    max-width: 100%;
+  }
+}
+
+/* ── End Teaser Page ──────────────────────────────── */
+
 @media (max-width: 1024px) {
   body {
     overflow-x: hidden;

@@ -73,7 +73,7 @@ export function SalthausPage() {
         <aside className="left-column">
           <div className="left-top-group">
             <div className="logo-section">
-              <img src="/bFryarGc.webp" alt="The Salthaus" className="logo" />
+              <img src="/Salthaus_Trading_Logo_Caps.PNG" alt="The Salthaus" className="logo" />
             </div>
             <div className="brand-info">
               <p className="brand-line">SMALL BATCH FINISHING SALTS</p>

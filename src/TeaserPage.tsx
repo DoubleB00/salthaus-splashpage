@@ -39,7 +39,7 @@ export function TeaserPage() {
 
       <div className="teaser-content">
         <div className="teaser-logo-wrap">
-          <img src="/bFryarGc.webp" alt="The Salthaus" className="teaser-logo" />
+          <img src="/Salthaus_Trading_Logo_Caps.PNG" alt="The Salthaus" className="teaser-logo" />
         </div>
 
         <div className="teaser-body">

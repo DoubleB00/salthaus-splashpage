@@ -141,7 +141,6 @@ h1, h2, h3 {
   max-width: 302px;
   height: auto;
   opacity: 1;
-  filter: brightness(10) saturate(0) contrast(1.1);
 }
 
 .brand-info {
@@ -771,7 +770,6 @@ h1, h2, h3 {
   width: 100%;
   max-width: 280px;
   height: auto;
-  filter: brightness(10) saturate(0) contrast(1.1);
   margin: 0 auto;
 }
 

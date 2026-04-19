@@ -144,7 +144,6 @@ export function SalthausPage() {
             </div>
 
             <div className="omens-section">
-              <p className="omens-label">Strictly Limited One-Off Batches (1–25 Jars)</p>
               <h2 className="omens-header">OMENS</h2>
               {omens.map((omen, index) => {
                 const [omenNumber, ...nameParts] = omen.omen.split(' ');

@@ -128,6 +128,21 @@ export function SalthausPage() {
           <div className="offerings-wrapper">
             <h1 className="offerings-header">OFFERINGS</h1>
 
+            <div className="offerings-list">
+              {offerings.map((offering, index) => {
+                const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
+                const hymnName = nameParts.join(' ');
+                return (
+                  <div key={index} className="offering-item">
+                    <h2 className="offering-hymn">
+                      <span className="hymn-number">{hymnNumber}</span> {hymnName}
+                    </h2>
+                    <p className="offering-description">{offering.description.toUpperCase()}</p>
+                  </div>
+                );
+              })}
+            </div>
+
             <div className="omens-section">
               <p className="omens-label">Strictly Limited One-Off Batches (1–25 Jars)</p>
               <h2 className="omens-header">OMENS</h2>
@@ -145,21 +160,8 @@ export function SalthausPage() {
               })}
             </div>
 
-            <div className="offerings-list">
-              {offerings.map((offering, index) => {
-                const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
-                const hymnName = nameParts.join(' ');
-                return (
-                  <div key={index} className="offering-item">
-                    <h2 className="offering-hymn">
-                      <span className="hymn-number">{hymnNumber}</span> {hymnName}
-                    </h2>
-                    <p className="offering-description">{offering.description.toUpperCase()}</p>
-                  </div>
-                );
-              })}
-              <div className="base-section">
-                {baseItems.map((item, index) => {
+            <div className="base-section">
+              {baseItems.map((item, index) => {
                   const [baseNumber, ...nameParts] = item.name.split(' ');
                   const baseName = nameParts.join(' ');
                   return (
@@ -170,7 +172,6 @@ export function SalthausPage() {
                     </div>
                   );
                 })}
-              </div>
             </div>
 
             <div className="disclaimer">

@@ -1,5 +1,12 @@
 import { useState } from 'react';
 
+const omens = [
+  {
+    omen: 'OMEN001 BLOOD PARTY ON CHANNEL 54',
+    description: 'Red Wine Salt, Black & White Sesame, Coriander'
+  }
+];
+
 const offerings = [
   {
     hymn: 'HYMN000 PALE GREEN, SEPTEMBER',
@@ -120,6 +127,23 @@ export function SalthausPage() {
         <main className="right-column">
           <div className="offerings-wrapper">
             <h1 className="offerings-header">OFFERINGS</h1>
+
+            <div className="omens-section">
+              <p className="omens-label">Strictly Limited One-Off Batches (1–25 Jars)</p>
+              <h2 className="omens-header">OMENS</h2>
+              {omens.map((omen, index) => {
+                const [omenNumber, ...nameParts] = omen.omen.split(' ');
+                const omenName = nameParts.join(' ');
+                return (
+                  <div key={index} className="offering-item omen-item">
+                    <h2 className="offering-hymn omen-hymn">
+                      <span className="hymn-number">{omenNumber}</span> {omenName}
+                    </h2>
+                    <p className="offering-description">{omen.description.toUpperCase()}</p>
+                  </div>
+                );
+              })}
+            </div>
 
             <div className="offerings-list">
               {offerings.map((offering, index) => {

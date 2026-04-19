@@ -49,7 +49,7 @@ export function TeaserPage() {
             <p className="teaser-meta-line">SUNRISE MOUNTAIN, NEW JERSEY</p>
           </div>
 
-          <p className="teaser-headline">ARRIVING SOON</p>
+          <p className="teaser-headline">ARRIVING AUGUST 18</p>
           <p className="teaser-sub">Enter your email to receive word of the arrival.</p>
 
           <form onSubmit={handleEmailSubmit} className="teaser-email-form">

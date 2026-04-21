@@ -43,6 +43,10 @@ const offerings = [
   {
     hymn: 'HYMN008 ANHEDÖNIA',
     description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
+  },
+  {
+    hymn: 'HYMN009 SUN BLEACHED SALT',
+    description: 'Refined Salt, Crushed Lemon Peel, Crushed Lime Peel'
   }
 ];
 
@@ -128,23 +132,32 @@ export function SalthausPage() {
           <div className="offerings-wrapper">
             <h1 className="offerings-header">OFFERINGS</h1>
 
-            <div className="offerings-list">
-              {offerings.map((offering, index) => {
-                const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
-                const hymnName = nameParts.join(' ');
-                return (
-                  <div key={index} className="offering-item">
-                    <h2 className="offering-hymn">
-                      <span className="hymn-number">{hymnNumber}</span> {hymnName}
-                    </h2>
-                    <p className="offering-description">{offering.description.toUpperCase()}</p>
-                  </div>
-                );
-              })}
+            <div className="section-block">
+              <div className="section-header-row">
+                <h3 className="section-label">HYMNS</h3>
+                <span className="section-descriptor">(core line)</span>
+              </div>
+              <div className="offerings-list">
+                {offerings.map((offering, index) => {
+                  const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
+                  const hymnName = nameParts.join(' ');
+                  return (
+                    <div key={index} className="offering-item">
+                      <h2 className="offering-hymn">
+                        <span className="hymn-number">{hymnNumber}</span> {hymnName}
+                      </h2>
+                      <p className="offering-description">{offering.description.toUpperCase()}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="omens-section">
-              <h2 className="omens-header">OMENS</h2>
+              <div className="section-header-row">
+                <h2 className="omens-header">OMENS</h2>
+                <span className="section-descriptor">(limited / seasonal)</span>
+              </div>
               {omens.map((omen, index) => {
                 const [omenNumber, ...nameParts] = omen.omen.split(' ');
                 const omenName = nameParts.join(' ');
@@ -160,6 +173,10 @@ export function SalthausPage() {
             </div>
 
             <div className="base-section">
+              <div className="section-header-row">
+                <h3 className="section-label base-section-label">BASE</h3>
+                <span className="section-descriptor">(everyday staples)</span>
+              </div>
               {baseItems.map((item, index) => {
                   const [baseNumber, ...nameParts] = item.name.split(' ');
                   const baseName = nameParts.join(' ');

@@ -4,17 +4,13 @@ const omens = [
   {
     omen: 'OMEN001 BLOOD PARTY ON CHANNEL 54',
     description: 'Red Wine Salt, Black & White Sesame, Coriander'
-  },
-  {
-    omen: 'OMEN002 LA FÉE VERTE',
-    description: 'Green Tea Salt, Wormwood, Fennel, Star Anise'
   }
 ];
 
 const offerings = [
   {
     hymn: 'HYMN000 PALE GREEN, SEPTEMBER',
-    description: 'Sea Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
+    description: 'Refined Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
   },
   {
     hymn: 'HYMN001 STILL',
@@ -50,7 +46,7 @@ const offerings = [
   },
   {
     hymn: 'HYMN009 SUN BLEACHED SALT',
-    description: 'Sea Salt, Crushed Lemon Peel, Crushed Lime Peel'
+    description: 'Refined Salt, Crushed Lemon Peel, Crushed Lime Peel'
   }
 ];
 

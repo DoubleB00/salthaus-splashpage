@@ -493,9 +493,9 @@ h1, h2, h3 {
 
 .section-descriptor {
   font-family: 'Crimson', serif;
-  font-size: 0.875rem;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.48);
+  color: rgba(255, 255, 255, 0.32);
   font-style: italic;
   font-weight: 400;
   white-space: nowrap;

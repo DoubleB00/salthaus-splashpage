@@ -4,13 +4,17 @@ const omens = [
   {
     omen: 'OMEN001 BLOOD PARTY ON CHANNEL 54',
     description: 'Red Wine Salt, Black & White Sesame, Coriander'
+  },
+  {
+    omen: 'OMEN002 LA FÉE VERTE',
+    description: 'Green Tea Salt, Wormwood, Fennel, Star Anise'
   }
 ];
 
 const offerings = [
   {
     hymn: 'HYMN000 PALE GREEN, SEPTEMBER',
-    description: 'Refined Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
+    description: 'Sea Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
   },
   {
     hymn: 'HYMN001 STILL',
@@ -41,12 +45,16 @@ const offerings = [
     description: 'Sea Salt, Hibiscus, Black Garlic'
   },
   {
-    hymn: 'HYMN008 ANHEDÖNIA',
-    description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
+    hymn: 'HYMN008 STARS DON\'T FALL',
+    description: 'Sea Salt, Chipotle Pepper, Raspberry'
   },
   {
     hymn: 'HYMN009 SUN BLEACHED SALT',
-    description: 'Refined Salt, Crushed Lemon Peel, Crushed Lime Peel'
+    description: 'Sea Salt, Crushed Lemon Peel, Crushed Lime Peel'
+  },
+  {
+    hymn: 'HYMN010 ANHEDÖNIA',
+    description: 'Grey Sea Salt, Black Currant, Activated Charcoal'
   }
 ];
 
@@ -54,6 +62,7 @@ const baseItems = [
   { name: 'BASE001 TOCINA', sub: 'SMOKED BACON SALT' },
   { name: 'BASE002 ROMERA', sub: 'SPANISH ROSEMARY SALT' },
   { name: 'BASE003 CURRY', sub: 'HOT CURRY SALT' },
+  { name: 'BASE004 SRIRACHA', sub: 'SRIRACHA SALT' },
 ];
 
 export function SalthausPage() {
@@ -121,8 +130,6 @@ export function SalthausPage() {
               </button>
               {message && <span className="inline-email-message">{message}</span>}
             </form>
-
-            <p className="brand-credit">THE SALTHAUS by GEMINI CROW</p>
 
             <div id="kit-form-container" className="kit-form-wrapper"></div>
           </div>

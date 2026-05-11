@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
+const STORE_URL = 'https://geminicrow.com/collections/the-salt-initiative';
+
 const omens = [
   {
-    omen: 'OMEN001 BLOOD PARTY ON CHANNEL 54',
+    omen: 'OMEN001 STATIC & WINE',
     description: 'Red Wine Salt, Black & White Sesame, Coriander'
   },
   {
-    omen: 'OMEN002 LA FÉE VERTE',
-    description: 'Green Tea Salt, Wormwood, Fennel, Star Anise'
+    omen: 'OMEN002 SALTANIC PANIC \'26',
+    description: 'Sea Salt, Pumpkin Powder, Black Pepper, Cinnamon'
   }
 ];
 
@@ -65,6 +67,10 @@ const baseItems = [
   { name: 'BASE004 SRIRACHA', sub: 'SRIRACHA SALT' },
 ];
 
+const cvltItems = [
+  { name: 'CVLT001 NO GODS. JUST SALT.', sub: 'Embroidered Cap' },
+];
+
 export function SalthausPage() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -104,7 +110,7 @@ export function SalthausPage() {
 
           <div className="left-bottom-group">
             <a
-              href="https://geminicrow.com/collections/the-salt-initiative"
+              href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="store-link"
@@ -142,7 +148,8 @@ export function SalthausPage() {
             <div className="section-block">
               <div className="section-header-row">
                 <h3 className="section-label">HYMNS</h3>
-                <span className="section-descriptor">(core line)</span>
+                <span className="section-pipe">|</span>
+                <span className="section-descriptor">Core Salts</span>
               </div>
               <div className="offerings-list">
                 {offerings.map((offering, index) => {
@@ -163,7 +170,8 @@ export function SalthausPage() {
             <div className="omens-section">
               <div className="section-header-row">
                 <h2 className="omens-header">OMENS</h2>
-                <span className="section-descriptor">(limited / seasonal)</span>
+                <span className="section-pipe">|</span>
+                <span className="section-descriptor">Limited Edition Salts</span>
               </div>
               {omens.map((omen, index) => {
                 const [omenNumber, ...nameParts] = omen.omen.split(' ');
@@ -181,20 +189,50 @@ export function SalthausPage() {
 
             <div className="base-section">
               <div className="section-header-row">
-                <h3 className="section-label base-section-label">BASE</h3>
-                <span className="section-descriptor">(everyday staples)</span>
+                <h3 className="section-label base-section-label">BASES</h3>
+                <span className="section-pipe">|</span>
+                <span className="section-descriptor">Foundational Salts</span>
               </div>
               {baseItems.map((item, index) => {
-                  const [baseNumber, ...nameParts] = item.name.split(' ');
-                  const baseName = nameParts.join(' ');
-                  return (
-                    <div key={index} className="base-item">
-                      <h2 className="base-title">
-                        <span className="base-number">{baseNumber}</span> {baseName} <span className="base-sub">{item.sub}</span>
-                      </h2>
-                    </div>
-                  );
-                })}
+                const [baseNumber, ...nameParts] = item.name.split(' ');
+                const baseName = nameParts.join(' ');
+                return (
+                  <div key={index} className="base-item">
+                    <h2 className="base-title">
+                      <span className="base-number">{baseNumber}</span> {baseName} <span className="base-sub">{item.sub}</span>
+                    </h2>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="cvlt-section">
+              <div className="section-header-row">
+                <h3 className="section-label cvlt-section-label">CVLT</h3>
+                <span className="section-pipe">|</span>
+                <span className="section-descriptor">Uniforms</span>
+              </div>
+              {cvltItems.map((item, index) => {
+                const [cvltNumber, ...nameParts] = item.name.split(' ');
+                const cvltName = nameParts.join(' ');
+                return (
+                  <div key={index} className="base-item cvlt-item">
+                    <h2 className="base-title cvlt-title">
+                      <span className="base-number">{cvltNumber}</span> {cvltName} <span className="base-sub cvlt-sub">{item.sub}</span>
+                    </h2>
+                  </div>
+                );
+              })}
+              <div className="cvlt-shop-row">
+                <a
+                  href={STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cvlt-shop-link"
+                >
+                  SHOP ALL OFFERINGS
+                </a>
+              </div>
             </div>
 
             <div className="disclaimer">

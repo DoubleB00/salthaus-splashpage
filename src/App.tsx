@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TeaserPage } from './TeaserPage';
 import { SalthausPage } from './SalthausPage';
+import { StorefrontPage } from './StorefrontPage';
 import { PasswordGate } from './PasswordGate';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             </PasswordGate>
           }
         />
+        <Route path="/store" element={<StorefrontPage />} />
       </Routes>
     </BrowserRouter>
   );

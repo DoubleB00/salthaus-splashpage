@@ -199,8 +199,9 @@ export function SalthausPage() {
                 return (
                   <div key={index} className="base-item">
                     <h2 className="base-title">
-                      <span className="base-number">{baseNumber}</span> {baseName} <span className="base-sub">{item.sub}</span>
+                      <span className="base-number">{baseNumber}</span> {baseName}
                     </h2>
+                    <p className="base-sub">{item.sub}</p>
                   </div>
                 );
               })}
@@ -208,7 +209,7 @@ export function SalthausPage() {
 
             <div className="cvlt-section">
               <div className="section-header-row">
-                <h3 className="section-label cvlt-section-label">CVLT</h3>
+                <h3 className="section-label cvlt-section-label">CULT</h3>
                 <span className="section-pipe">|</span>
                 <span className="section-descriptor">Uniforms</span>
               </div>
@@ -218,16 +219,15 @@ export function SalthausPage() {
                 return (
                   <div key={index} className="base-item cvlt-item">
                     <h2 className="base-title cvlt-title">
-                      <span className="base-number">{cvltNumber}</span> {cvltName} <span className="base-sub cvlt-sub">{item.sub}</span>
+                      <span className="base-number">{cvltNumber}</span> {cvltName}
                     </h2>
+                    <p className="base-sub cvlt-sub">{item.sub}</p>
                   </div>
                 );
               })}
               <div className="cvlt-shop-row">
                 <a
-                  href={STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/store"
                   className="cvlt-shop-link"
                 >
                   SHOP ALL OFFERINGS

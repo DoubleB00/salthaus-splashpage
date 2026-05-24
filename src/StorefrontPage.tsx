@@ -41,7 +41,7 @@ const NAV_CATEGORIES = [
   { id: 'hymns', label: 'HYMNS' },
   { id: 'omens', label: 'OMENS' },
   { id: 'bases', label: 'BASES' },
-  { id: 'cult', label: 'CVLT' },
+  { id: 'cult', label: 'CULT' },
 ] as const;
 
 type Category = typeof NAV_CATEGORIES[number]['id'];
@@ -280,7 +280,7 @@ export function StorefrontPage() {
           {/* CULT */}
           <section ref={cultRef as React.RefObject<HTMLElement>} className="sf-section" id="cult">
             <div className="sf-section-head">
-              <h2 className="sf-section-title">CVLT</h2>
+              <h2 className="sf-section-title">CULT</h2>
               <span className="sf-section-sub">Uniforms</span>
             </div>
             <div className="sf-grid">

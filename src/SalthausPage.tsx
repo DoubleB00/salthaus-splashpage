@@ -48,7 +48,7 @@ const offerings = [
   },
   {
     hymn: 'HYMN008 STARS DON\'T FALL',
-    description: 'Sea Salt, Chipotle Pepper, Raspberry'
+    description: 'Sea Salt, Chipotle Pepper, Raspberries'
   },
   {
     hymn: 'HYMN009 SUN BLEACHED SALT',

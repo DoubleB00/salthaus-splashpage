@@ -22,7 +22,7 @@ const products: Product[] = [
   { code: 'HYMN005', name: 'ANGELS DESERVE TO DIE!', descriptor: 'Hawaiian Black Lava Salt, Scorpion Pepper', category: 'hymns', price: '—', ingredients: 'Hawaiian Black Lava Salt, Scorpion Pepper' },
   { code: 'HYMN006', name: 'SUKEBAN SWITCHBLADE', descriptor: 'Yaki-Shio Sea Salt, Yuzu, Black Sesame', category: 'hymns', price: '—', ingredients: 'Yaki-Shio Sea Salt, Yuzu, Black Sesame' },
   { code: 'HYMN007', name: 'MURDER BALLAD', descriptor: 'Sea Salt, Hibiscus, Black Garlic', category: 'hymns', price: '—', ingredients: 'Sea Salt, Hibiscus, Black Garlic' },
-  { code: 'HYMN008', name: "STARS DON'T FALL", descriptor: 'Sea Salt, Chipotle Pepper, Raspberry', category: 'hymns', price: '—', ingredients: 'Sea Salt, Chipotle Pepper, Raspberry' },
+  { code: 'HYMN008', name: "STARS DON'T FALL", descriptor: 'Sea Salt, Chipotle Pepper, Raspberries', category: 'hymns', price: '—', ingredients: 'Sea Salt, Chipotle Pepper, Raspberries' },
   { code: 'HYMN009', name: 'SUN BLEACHED SALT', descriptor: 'Sea Salt, Crushed Lemon Peel, Crushed Lime Peel', category: 'hymns', price: '—', ingredients: 'Sea Salt, Crushed Lemon Peel, Crushed Lime Peel' },
   { code: 'HYMN010', name: 'ANHEDÖNIA', descriptor: 'Grey Sea Salt, Black Currant, Activated Charcoal', category: 'hymns', price: '—', ingredients: 'Grey Sea Salt, Black Currant, Activated Charcoal' },
   // OMENS

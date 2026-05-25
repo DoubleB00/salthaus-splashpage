@@ -189,7 +189,7 @@ export function SalthausPage() {
 
             <div className="base-section">
               <div className="section-header-row">
-                <h3 className="section-label base-section-label">BASES</h3>
+                <h3 className="section-label">BASES</h3>
                 <span className="section-pipe">|</span>
                 <span className="section-descriptor">Foundational Salts</span>
               </div>

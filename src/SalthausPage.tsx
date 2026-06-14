@@ -132,7 +132,7 @@ export function SalthausPage() {
             >
               STORE
             </a>
-            <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
+            <a href="mailto:cultofsalthaus@gmail.com" className="contact-link">CONTACT</a>
             <button
               className={`contact-link archive-nav-btn${view === 'archive' ? ' archive-nav-btn--active' : ''}`}
               onClick={() => setView('archive')}
@@ -157,7 +157,6 @@ export function SalthausPage() {
               {message && <span className="inline-email-message">{message}</span>}
             </form>
 
-            <div id="kit-form-container" className="kit-form-wrapper"></div>
           </div>
         </aside>
 

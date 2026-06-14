@@ -1,23 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const KIT_SRC = 'https://cult-of-salthaus.kit.com/0e73c8f29c/index.js';
-const KIT_UID = '0e73c8f29c';
 
 export function TeaserPage() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (document.querySelector(`script[data-uid="${KIT_UID}"]`)) return;
-    const script = document.createElement('script');
-    script.src = KIT_SRC;
-    script.async = true;
-    script.setAttribute('data-uid', KIT_UID);
-    document.body.appendChild(script);
-  }, []);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

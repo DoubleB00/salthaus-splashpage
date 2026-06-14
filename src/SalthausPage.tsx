@@ -71,10 +71,25 @@ const cvltItems = [
   { name: 'CVLT001 NO GODS. JUST SALT.', sub: 'Embroidered Cap' },
 ];
 
+const archiveImages = [
+  {
+    src: '/image0_(2).jpeg',
+    alt: 'Salthaus Archive — circa 1976'
+  },
+  {
+    src: '/image1.jpeg',
+    alt: 'Salthaus Archive — northern New Jersey'
+  }
+];
+
+type View = 'offerings' | 'archive';
+
 export function SalthausPage() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
+  const [view, setView] = useState<View>('offerings');
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,7 +133,12 @@ export function SalthausPage() {
               STORE
             </a>
             <a href="mailto:salt@cultofsalthaus.com" className="contact-link">CONTACT</a>
-            <a href="https://substack.com/@cultofsalthaus?utm_source=global-search" target="_blank" rel="noopener noreferrer" className="contact-link">ARCHIVE</a>
+            <button
+              className={`contact-link archive-nav-btn${view === 'archive' ? ' archive-nav-btn--active' : ''}`}
+              onClick={() => setView('archive')}
+            >
+              ARCHIVE
+            </button>
             <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
 
             <form onSubmit={handleEmailSubmit} className="inline-email-capture">
@@ -142,111 +162,166 @@ export function SalthausPage() {
         </aside>
 
         <main className="right-column">
-          <div className="offerings-wrapper">
-            <h1 className="offerings-header">OFFERINGS</h1>
+          {view === 'offerings' ? (
+            <div className="offerings-wrapper">
+              <h1 className="offerings-header">OFFERINGS</h1>
 
-            <div className="section-block">
-              <div className="section-header-row">
-                <h3 className="section-label">HYMNS</h3>
-                <span className="section-pipe">|</span>
-                <span className="section-descriptor">Core Salts</span>
+              <div className="section-block">
+                <div className="section-header-row">
+                  <h3 className="section-label">HYMNS</h3>
+                  <span className="section-pipe">|</span>
+                  <span className="section-descriptor">Core Salts</span>
+                </div>
+                <div className="offerings-list">
+                  {offerings.map((offering, index) => {
+                    const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
+                    const hymnName = nameParts.join(' ');
+                    return (
+                      <div key={index} className="offering-item">
+                        <h2 className="offering-hymn">
+                          <span className="hymn-number">{hymnNumber}</span> {hymnName}
+                        </h2>
+                        <p className="offering-description">{offering.description.toUpperCase()}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="offerings-list">
-                {offerings.map((offering, index) => {
-                  const [hymnNumber, ...nameParts] = offering.hymn.split(' ');
-                  const hymnName = nameParts.join(' ');
+
+              <div className="omens-section">
+                <div className="section-header-row">
+                  <h2 className="omens-header">OMENS</h2>
+                  <span className="section-pipe">|</span>
+                  <span className="section-descriptor">Limited Edition Salts</span>
+                </div>
+                {omens.map((omen, index) => {
+                  const [omenNumber, ...nameParts] = omen.omen.split(' ');
+                  const omenName = nameParts.join(' ');
                   return (
-                    <div key={index} className="offering-item">
-                      <h2 className="offering-hymn">
-                        <span className="hymn-number">{hymnNumber}</span> {hymnName}
+                    <div key={index} className="offering-item omen-item">
+                      <h2 className="offering-hymn omen-hymn">
+                        <span className="hymn-number">{omenNumber}</span> {omenName}
                       </h2>
-                      <p className="offering-description">{offering.description.toUpperCase()}</p>
+                      <p className="offering-description">{omen.description.toUpperCase()}</p>
                     </div>
                   );
                 })}
               </div>
-            </div>
 
-            <div className="omens-section">
-              <div className="section-header-row">
-                <h2 className="omens-header">OMENS</h2>
-                <span className="section-pipe">|</span>
-                <span className="section-descriptor">Limited Edition Salts</span>
+              <div className="base-section">
+                <div className="section-header-row">
+                  <h3 className="section-label">BASES</h3>
+                  <span className="section-pipe">|</span>
+                  <span className="section-descriptor">Foundational Salts</span>
+                </div>
+                {baseItems.map((item, index) => {
+                  const [baseNumber, ...nameParts] = item.name.split(' ');
+                  const baseName = nameParts.join(' ');
+                  return (
+                    <div key={index} className="base-item">
+                      <h2 className="base-title">
+                        <span className="base-number">{baseNumber}</span> {baseName}
+                      </h2>
+                      <p className="base-sub">{item.sub}</p>
+                    </div>
+                  );
+                })}
               </div>
-              {omens.map((omen, index) => {
-                const [omenNumber, ...nameParts] = omen.omen.split(' ');
-                const omenName = nameParts.join(' ');
-                return (
-                  <div key={index} className="offering-item omen-item">
-                    <h2 className="offering-hymn omen-hymn">
-                      <span className="hymn-number">{omenNumber}</span> {omenName}
-                    </h2>
-                    <p className="offering-description">{omen.description.toUpperCase()}</p>
-                  </div>
-                );
-              })}
-            </div>
 
-            <div className="base-section">
-              <div className="section-header-row">
-                <h3 className="section-label">BASES</h3>
-                <span className="section-pipe">|</span>
-                <span className="section-descriptor">Foundational Salts</span>
+              <div className="cvlt-section">
+                <div className="section-header-row">
+                  <h3 className="section-label cvlt-section-label">CULT</h3>
+                  <span className="section-pipe">|</span>
+                  <span className="section-descriptor">Uniforms</span>
+                </div>
+                {cvltItems.map((item, index) => {
+                  const [cvltNumber, ...nameParts] = item.name.split(' ');
+                  const cvltName = nameParts.join(' ');
+                  return (
+                    <div key={index} className="base-item cvlt-item">
+                      <h2 className="base-title cvlt-title">
+                        <span className="base-number">{cvltNumber}</span> {cvltName}
+                      </h2>
+                      <p className="base-sub cvlt-sub">{item.sub}</p>
+                    </div>
+                  );
+                })}
+                <div className="cvlt-shop-row">
+                  <a href="/store" className="cvlt-shop-link">
+                    SHOP ALL OFFERINGS
+                  </a>
+                </div>
               </div>
-              {baseItems.map((item, index) => {
-                const [baseNumber, ...nameParts] = item.name.split(' ');
-                const baseName = nameParts.join(' ');
-                return (
-                  <div key={index} className="base-item">
-                    <h2 className="base-title">
-                      <span className="base-number">{baseNumber}</span> {baseName}
-                    </h2>
-                    <p className="base-sub">{item.sub}</p>
-                  </div>
-                );
-              })}
-            </div>
 
-            <div className="cvlt-section">
-              <div className="section-header-row">
-                <h3 className="section-label cvlt-section-label">CULT</h3>
-                <span className="section-pipe">|</span>
-                <span className="section-descriptor">Uniforms</span>
+              <div className="disclaimer">
+                <p>Some will return.</p>
+                <p>Some will disappear.</p>
+                <p>Nothing is promised.</p>
               </div>
-              {cvltItems.map((item, index) => {
-                const [cvltNumber, ...nameParts] = item.name.split(' ');
-                const cvltName = nameParts.join(' ');
-                return (
-                  <div key={index} className="base-item cvlt-item">
-                    <h2 className="base-title cvlt-title">
-                      <span className="base-number">{cvltNumber}</span> {cvltName}
-                    </h2>
-                    <p className="base-sub cvlt-sub">{item.sub}</p>
-                  </div>
-                );
-              })}
-              <div className="cvlt-shop-row">
-                <a
-                  href="/store"
-                  className="cvlt-shop-link"
-                >
-                  SHOP ALL OFFERINGS
-                </a>
+
+              <div className="closing-statement">
+                <p>NO GODS. JUST SALT.</p>
               </div>
             </div>
+          ) : (
+            <div className="archive-wrapper">
+              <h1 className="archive-header">ARCHIVE</h1>
 
-            <div className="disclaimer">
-              <p>Some will return.</p>
-              <p>Some will disappear.</p>
-              <p>Nothing is promised.</p>
-            </div>
+              <div className="archive-body">
+                <p className="archive-text">
+                  The earliest known records of The Salthaus Trading Company date back to 1976 and suggest it traded in salt and provisions from somewhere in the mountains of northern New Jersey. The surviving records are fragmentary and offer little explanation beyond that. No founder has been identified, no complete history remains, and whether it was merely a business remains a mystery. The purpose of its recent revival is unclear. The devotion, however, appears consistent.
+                </p>
 
-            <div className="closing-statement">
-              <p>NO GODS. JUST SALT.</p>
+                <div className="archive-images">
+                  {archiveImages.map((img, i) => (
+                    <button
+                      key={i}
+                      className="archive-image-btn"
+                      onClick={() => setLightboxSrc(img.src)}
+                      aria-label={`Enlarge: ${img.alt}`}
+                    >
+                      <img src={img.src} alt={img.alt} className="archive-image" />
+                      <span className="archive-image-caption">{img.alt}</span>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="archive-return-row">
+                  <button
+                    className="archive-return-link"
+                    onClick={() => setView('offerings')}
+                  >
+                    RETURN TO MAIN PAGE
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </main>
       </div>
+
+      {lightboxSrc && (
+        <div
+          className="archive-lightbox"
+          onClick={() => setLightboxSrc(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="archive-lightbox-close"
+            onClick={() => setLightboxSrc(null)}
+            aria-label="Close"
+          >
+            &#x2715;
+          </button>
+          <img
+            src={lightboxSrc}
+            alt="Archive"
+            className="archive-lightbox-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

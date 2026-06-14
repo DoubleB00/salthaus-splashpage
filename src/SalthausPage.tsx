@@ -73,12 +73,12 @@ const cvltItems = [
 
 const archiveImages = [
   {
-    src: '/image0_(2).jpeg',
-    alt: 'Salthaus Archive — circa 1976'
+    src: '/image0.png',
+    alt: 'SALTHAUS ARCHIVE — CIRCA 1976'
   },
   {
-    src: '/image1.jpeg',
-    alt: 'Salthaus Archive — northern New Jersey'
+    src: '/image1.png',
+    alt: 'SALTHAUS ARCHIVE — NORTHERN NEW JERSEY'
   }
 ];
 
@@ -114,7 +114,9 @@ export function SalthausPage() {
         <aside className="left-column">
           <div className="left-top-group">
             <div className="logo-section">
-              <img src="/Salthaus_Trading_Logo_Caps.PNG" alt="The Salthaus" className="logo" />
+              <button className="logo-home-btn" onClick={() => setView('offerings')} aria-label="Return to main page">
+                <img src="/Salthaus_Trading_Logo_Caps.PNG" alt="The Salthaus" className="logo" />
+              </button>
             </div>
             <div className="brand-info">
               <p className="brand-line">SMALL BATCH FINISHING SALTS</p>

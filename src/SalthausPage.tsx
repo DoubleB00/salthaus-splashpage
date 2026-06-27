@@ -139,7 +139,7 @@ export function SalthausPage() {
               className={`contact-link archive-nav-btn${view === 'archive' ? ' archive-nav-btn--active' : ''}`}
               onClick={() => setView('archive')}
             >
-              ARCHIVE
+              HISTORY
             </button>
             <a href="https://open.spotify.com/user/31ewwgyfz3jelk6xusokhnorooha?si=f529a33aa7534465" target="_blank" rel="noopener noreferrer" className="contact-link">SALTGAZE</a>
 
@@ -165,7 +165,7 @@ export function SalthausPage() {
         <main className="right-column">
           {view === 'offerings' ? (
             <div className="offerings-wrapper">
-              <h1 className="offerings-header">OFFERINGS</h1>
+              <h1 className="offerings-header">SALTOGRAPHY</h1>
 
               <div className="section-block">
                 <div className="section-header-row">
@@ -252,12 +252,6 @@ export function SalthausPage() {
                     SHOP ALL OFFERINGS
                   </a>
                 </div>
-              </div>
-
-              <div className="disclaimer">
-                <p>Some will return.</p>
-                <p>Some will disappear.</p>
-                <p>Nothing is promised.</p>
               </div>
 
               <div className="closing-statement">

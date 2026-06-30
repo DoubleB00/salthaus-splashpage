@@ -68,7 +68,7 @@ const baseItems = [
 ];
 
 const cvltItems = [
-  { name: 'CVLT001 NO GODS. JUST SALT.', sub: 'Embroidered Cap' },
+  { name: 'CULT001 NO GODS. JUST SALT.', sub: 'Embroidered Cap' },
 ];
 
 const archiveImages = [
@@ -264,7 +264,13 @@ export function SalthausPage() {
 
               <div className="archive-body">
                 <p className="archive-text">
-                  The earliest known records of The Salthaus Trading Company date back to 1976 and suggest it traded in salt and provisions from somewhere in the mountains of northern New Jersey. The surviving records are fragmentary and offer little explanation beyond that. No founder has been identified, no complete history remains, and whether it was merely a business remains a mystery. The purpose of its recent revival is unclear. The devotion, however, appears consistent.
+                  The earliest known records of The Salthaus Trading Company date back to 1976, when it operated from a modest storefront on Main Street in Sunrise Mountain, New Jersey. Surviving purchase ledgers confirm the company traded in salt and provisions, though little else is known.
+                </p>
+                <p className="archive-text">
+                  The historical record fell silent sometime during the 1980s. For decades, local whispers suggested Salthaus had been more than a provisions company, though no surviving record has ever confirmed the claim. The original Main Street storefront has stood abandoned for decades.
+                </p>
+                <p className="archive-text">
+                  In 2025, nearly fifty years after its founding, Salthaus products quietly reappeared. No public record identifies the company's current place of operation, no founder has ever been confirmed, and no complete history survives. The archive remains incomplete.
                 </p>
 
                 <div className="archive-images">

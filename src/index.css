@@ -1371,8 +1371,8 @@ h1, h2, h3 {
 }
 
 .archive-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   gap: 1.25rem;
 }
 

@@ -15,8 +15,8 @@ const omens = [
 
 const offerings = [
   {
-    hymn: 'HYMN000 PALE GREEN, SEPTEMBER',
-    description: 'Sea Salt, Green Apple, White Pepper (Early Subscriber Exclusive)'
+    hymn: 'HYMN000 — SLEEPWALKER (EARLY SUBSCRIBER EXCLUSIVE)',
+    description: 'Sea Salt, Green Tea, Fennel, Saffron, Star Anise'
   },
   {
     hymn: 'HYMN001 STILL',
@@ -75,10 +75,6 @@ const archiveImages = [
   {
     src: '/image0.png',
     alt: 'SALTHAUS ARCHIVE — CIRCA 1976'
-  },
-  {
-    src: '/image1.png',
-    alt: 'SALTHAUS ARCHIVE — NORTHERN NEW JERSEY'
   }
 ];
 
@@ -260,17 +256,20 @@ export function SalthausPage() {
             </div>
           ) : (
             <div className="archive-wrapper">
-              <h1 className="archive-header">ARCHIVE</h1>
+              <h1 className="archive-header">HISTORY</h1>
 
               <div className="archive-body">
                 <p className="archive-text">
-                  The earliest known records of The Salthaus Trading Company date back to 1976, when it operated from a modest storefront on Main Street in Sunrise Mountain, New Jersey. Surviving purchase ledgers confirm the company traded in salt and provisions, though little else is known.
+                  The earliest known records of The Salthaus Trading Company date back to 1976, where it operated from a modest storefront on Main Street in Sunrise Mountain, New Jersey. Surviving purchase ledgers confirm the company traded in salt and provisions, though little else is known.
                 </p>
                 <p className="archive-text">
-                  The historical record fell silent sometime during the 1980s. For decades, local whispers suggested Salthaus had been more than a provisions company, though no surviving record has ever confirmed the claim. The original Main Street storefront has stood abandoned for decades.
+                  The historical record fell silent sometime during the 1980s. For decades, local whispers suggested Salthaus had been more than a provisions company, though no surviving record has ever confirmed the claim.
                 </p>
                 <p className="archive-text">
-                  In 2025, nearly fifty years after its founding, Salthaus products quietly reappeared. No public record identifies the company's current place of operation, no founder has ever been confirmed, and no complete history survives. The archive remains incomplete.
+                  In 2025, a collection of business records bearing the Salthaus name surfaced among a batch of forgotten paper archives. Among the papers were handwritten formulas, ingredient notes, and incomplete production journals—just enough to suggest what Salthaus had once been, but never enough to tell the whole story. After months of research, the company was revived—not as a replica, but as a continuation of what could still be preserved.
+                </p>
+                <p className="archive-text">
+                  Much of its history has been lost over time. What remains continues to shape the company today.
                 </p>
 
                 <div className="archive-images">

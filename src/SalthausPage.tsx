@@ -73,8 +73,8 @@ const cvltItems = [
 
 const archiveImages = [
   {
-    src: '/image0.png',
-    alt: 'SALTHAUS ARCHIVE — CIRCA 1976'
+    src: '/B66041F5-E134-4E37-BF83-909F78CAD096.PNG',
+    alt: 'SALTHAUS ARCHIVE — CIRCA 1977'
   }
 ];
 

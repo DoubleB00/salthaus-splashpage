@@ -15,7 +15,7 @@ const omens = [
 
 const offerings = [
   {
-    hymn: 'HYMN000 — SLEEPWALKER (EARLY SUBSCRIBER EXCLUSIVE)',
+    hymn: 'HYMN000 SLEEPWALKER',
     description: 'Sea Salt, Green Tea, Fennel, Saffron, Star Anise'
   },
   {
@@ -75,6 +75,14 @@ const archiveImages = [
   {
     src: '/B66041F5-E134-4E37-BF83-909F78CAD096.PNG',
     alt: 'SALTHAUS ARCHIVE — CIRCA 1977'
+  },
+  {
+    src: '/image0_(1).png',
+    alt: 'SALTHAUS ARCHIVE — 1976'
+  },
+  {
+    src: '/image1_(2).png',
+    alt: 'SALTHAUS ARCHIVE — PURCHASE RECORD, 1976'
   }
 ];
 

@@ -101,20 +101,9 @@ export function SalthausPage() {
     setMessage('');
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
-      const response = await fetch(`${supabaseUrl}/functions/v1/shopify-newsletter`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-        },
-        body: JSON.stringify({ email }),
-      });
-      if (!response.ok) throw new Error('signup failed');
       setMessage('DEVOTED');
       setEmail('');
-    } catch {
+    } catch (err) {
       setMessage('TRY AGAIN');
     } finally {
       setIsSubmitting(false);

@@ -101,9 +101,20 @@ export function SalthausPage() {
     setMessage('');
 
     try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+      const response = await fetch(`${supabaseUrl}/functions/v1/shopify-newsletter`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (!response.ok) throw new Error('signup failed');
       setMessage('DEVOTED');
       setEmail('');
-    } catch (err) {
+    } catch {
       setMessage('TRY AGAIN');
     } finally {
       setIsSubmitting(false);
@@ -259,7 +270,7 @@ export function SalthausPage() {
               </div>
 
               <div className="closing-statement">
-                <p>NO GODS. JUST SALT.</p>
+                <p>PROVISIONS FOR LONELY AMERICA.</p>
               </div>
             </div>
           ) : (
@@ -268,17 +279,21 @@ export function SalthausPage() {
 
               <div className="archive-body">
                 <p className="archive-text">
-                  The earliest known records of The Salthaus Trading Company date back to 1976, where it operated from a modest storefront on Main Street in Sunrise Mountain, New Jersey. Surviving purchase ledgers confirm the company traded in salt and provisions, though little else is known.
+                  The earliest known records of The Salthaus Trading Company date back to 1976, where it operated from a modest storefront near Sunrise Mountain, New Jersey. Surviving purchase ledgers confirm the company traded in salt and provisions, though little else is known. The historical record fell silent sometime during the 1980s. For decades, local whispers suggested Salthaus had been more than a provisions company, though no surviving record has ever confirmed the claim.
                 </p>
                 <p className="archive-text">
-                  The historical record fell silent sometime during the 1980s. For decades, local whispers suggested Salthaus had been more than a provisions company, though no surviving record has ever confirmed the claim.
+                  In 2020, a collection of business records bearing the Salthaus name surfaced among several boxes of forgotten business records acquired from the estate of a now-closed antique shop in Montague, New Jersey. Among the papers were handwritten formulas, ingredient notes, incomplete production journals, supplier correspondences, shipping invoices, and several faded photographs. Large portions of the archive had been lost to time. Water damage, missing pages, and contradictory records left much of the company's history impossible to verify. What remained, however, was unmistakably authentic; evidence of a company whose standards were documented as carefully as its recipes. Several records remain incomplete, their missing pages preserving only names, ingredient lists, or handwritten notes in the margins. Those records continue to shape future offerings.
                 </p>
                 <p className="archive-text">
-                  In 2025, a collection of business records bearing the Salthaus name surfaced among a batch of forgotten paper archives. Among the papers were handwritten formulas, ingredient notes, and incomplete production journals—just enough to suggest what Salthaus had once been, but never enough to tell the whole story. After months of research, the company was revived—not as a replica, but as a continuation of what could still be preserved.
+                  Curiously, nothing recovered from the archive ever explained the rumors that had surrounded the company for decades. If anything, the surviving records only deepened them.
                 </p>
                 <p className="archive-text">
-                  Much of its history has been lost over time. What remains continues to shape the company today.
+                  After years of research, the company was revived in early 2026—not as a replica, but as a continuation of what still could be preserved. Much of its history has been lost over time. What survived was enough to begin again. The rest remains unwritten.
                 </p>
+
+                <div className="archive-van-image">
+                  <img src="/image0_(2).png" alt="SALTHAUS TRADING CO. — SUNRISE MOUNTAIN, N.J." className="archive-van-img" />
+                </div>
 
                 <div className="archive-images">
                   {archiveImages.map((img, i) => (
@@ -292,6 +307,11 @@ export function SalthausPage() {
                       <span className="archive-image-caption">{img.alt}</span>
                     </button>
                   ))}
+                </div>
+
+                <div className="archive-closing">
+                  <p className="archive-closing-line">The Salthaus Trading Company</p>
+                  <p className="archive-closing-tagline">Provisions For Lonely America.</p>
                 </div>
 
                 <div className="archive-return-row">

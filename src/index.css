@@ -71,7 +71,7 @@ h1, h2, h3 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/image1_(3).png');
+  background-image: url('/IMG_6986_(1).jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -866,7 +866,7 @@ h1, h2, h3 {
 .teaser-bg {
   position: fixed;
   inset: 0;
-  background-image: url('/images/image1_(3).png');
+  background-image: url('/IMG_6986_(1).jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1436,26 +1436,6 @@ h1, h2, h3 {
 }
 
 /* Lightbox */
-
-.archive-van-image {
-  margin: 1.5rem 0 0.5rem;
-  width: 100%;
-  overflow: hidden;
-}
-
-.archive-van-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(100%) contrast(1.05) brightness(0.78);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: filter 0.4s ease;
-}
-
-.archive-van-img:hover {
-  filter: grayscale(85%) contrast(1.05) brightness(0.86);
-}
 
 .archive-closing {
   margin-top: 3rem;

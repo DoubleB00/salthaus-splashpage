@@ -4,6 +4,10 @@ const STORE_URL = 'https://geminicrow.com/collections/the-salt-initiative';
 
 const omens = [
   {
+    omen: 'OMEN000 TEMPEST',
+    description: 'Red Alaea Salt, Carolina Reaper Pepper, Scorpion Pepper, Ghost Pepper'
+  },
+  {
     omen: 'OMEN001 STATIC & WINE',
     description: 'Red Wine Salt, Black & White Sesame, Coriander'
   },
@@ -72,6 +76,14 @@ const cvltItems = [
 ];
 
 const archiveImages = [
+  {
+    src: '/images/image1_(3).png',
+    alt: 'SALTHAUS STOREFRONT — SUNRISE MOUNTAIN, N.J.'
+  },
+  {
+    src: '/image0_(2).png',
+    alt: 'SALTHAUS TRADING CO. — SUNRISE MOUNTAIN, N.J.'
+  },
   {
     src: '/B66041F5-E134-4E37-BF83-909F78CAD096.PNG',
     alt: 'SALTHAUS ARCHIVE — CIRCA 1977'
@@ -279,10 +291,6 @@ export function SalthausPage() {
                 <p className="archive-text">
                   After years of research, the company was revived in early 2026—not as a replica, but as a continuation of what still could be preserved. Much of its history has been lost over time. What survived was enough to begin again. The rest remains unwritten.
                 </p>
-
-                <div className="archive-van-image">
-                  <img src="/image0_(2).png" alt="SALTHAUS TRADING CO. — SUNRISE MOUNTAIN, N.J." className="archive-van-img" />
-                </div>
 
                 <div className="archive-images">
                   {archiveImages.map((img, i) => (

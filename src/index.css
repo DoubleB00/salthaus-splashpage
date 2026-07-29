@@ -718,7 +718,7 @@ h1, h2, h3 {
 }
 
 .closing-statement {
-  text-align: left;
+  text-align: center;
   padding: 3rem 0 5rem;
 }
 
@@ -1371,9 +1371,9 @@ h1, h2, h3 {
 }
 
 .archive-images {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .archive-image-btn {
@@ -1385,7 +1385,6 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 0.5rem;
   text-align: left;
-  overflow: hidden;
 }
 
 .archive-image-btn:hover .archive-image {

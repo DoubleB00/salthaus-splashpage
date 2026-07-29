@@ -85,10 +85,6 @@ const archiveImages = [
     alt: 'SALTHAUS TRADING CO. — SUNRISE MOUNTAIN, N.J.'
   },
   {
-    src: '/B66041F5-E134-4E37-BF83-909F78CAD096.PNG',
-    alt: 'SALTHAUS ARCHIVE — CIRCA 1977'
-  },
-  {
     src: '/image0_(1).png',
     alt: 'SALTHAUS ARCHIVE — 1976'
   },
@@ -271,7 +267,7 @@ export function SalthausPage() {
               </div>
 
               <div className="closing-statement">
-                <p>PROVISIONS FOR LONELY AMERICA.</p>
+                <p>PROVISIONS FOR<br />LONELY AMERICA.</p>
               </div>
             </div>
           ) : (

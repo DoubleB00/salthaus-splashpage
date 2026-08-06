@@ -77,11 +77,11 @@ const cvltItems = [
 
 const archiveImages = [
   {
-    src: '/images/image1_(3).png',
+    src: '/archive_storefront.png',
     alt: 'SALTHAUS STOREFRONT — SUNRISE MOUNTAIN, N.J.'
   },
   {
-    src: '/image0_(2).png',
+    src: '/archive_trading_co.png',
     alt: 'SALTHAUS TRADING CO. — SUNRISE MOUNTAIN, N.J.'
   },
   {

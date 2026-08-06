@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const STORE_URL = 'https://geminicrow.com/collections/the-salt-initiative';
+const STORE_URL = 'https://shop.cultofsalthaus.com';
 
 const omens = [
   {

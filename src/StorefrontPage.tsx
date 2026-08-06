@@ -197,7 +197,7 @@ export function StorefrontPage() {
             Nothing is promised.
           </p>
           <nav className="sf-left-nav">
-            <a href="/launch" className="sf-left-link">SALTHAUS INFO</a>
+            <a href="/" className="sf-left-link">SALTHAUS INFO</a>
             <a href="/" className="sf-left-link">RETURN TO MAIN PAGE</a>
             <a href={STORE_URL} target="_blank" rel="noopener noreferrer" className="sf-left-link">FAQ</a>
           </nav>
